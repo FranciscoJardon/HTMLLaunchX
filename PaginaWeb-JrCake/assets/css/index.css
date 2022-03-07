@@ -1,0 +1,242 @@
+*{
+    box-sizing: border-box;
+}
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+
+body{
+    position: relative;
+    background:#F0FAFF;
+    color:#004266;
+    font-family: 'Abril Fatface', cursive;
+}
+
+.contenedor-carga{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+.contenedor-home{
+    display: flex;
+    align-items: center;
+} 
+.contenedor-logo{
+    position: relative;
+    display: inline-block;
+    width: 50vw;
+}
+.img-inicio{
+   width: 50vw; 
+}
+
+h1,h2,h3,p{
+    text-align: center;
+}
+p{
+    font-size: small;
+    color: black;
+}
+
+
+/* ------ slider styles -------  */
+
+.swiper {
+        width: 95vw;
+        height: auto;
+       
+       
+      }
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+.contenedor-crear{
+    margin-top: 5vh;
+}      
+.contenedor-form{
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.input{
+    background: #95DCFF;
+    border-radius: 5px;
+    color: #fff;
+    outline: none;
+    border: none;
+    padding: 15px 10px;
+}
+
+.input::placeholder{
+    color: #fff;
+    
+    font-size: small;
+}
+
+input[type="text"], 
+input[type="email"],
+input[type="number"]{
+    display: inline-block;
+    width: 80%;
+    margin-bottom: 15px;
+}
+
+.form textarea{
+    max-width: 300px;
+    min-width: 250px;
+   width: 295px;
+   min-height: 200px;
+   max-height: 200px;
+    margin-bottom: 15px;
+}
+
+input[type="submit"]{
+    width: 120px;
+    text-align: center;
+    padding: 14px 0;
+}
+
+input[type="submit"]:hover{
+    cursor: pointer;
+    color: tomato;
+    background: #fff;
+    color: #667a62;
+}
+.contenedor-contacto{
+    margin-top: 5vh;  
+}
+footer{
+    background-color:#95DCFF ;
+    margin-bottom: 0;
+}
+footer>h2,h3,a{
+    text-align: left;
+    margin-left: 2vh;
+    margin-right: 1vh;
+    
+}
+
+/*menu */
+
+#sidebar-wrapper {
+    position: fixed;
+    z-index: 2;
+    right: 0;
+    width: 200px;
+    height: 40%;
+    -webkit-transition: all 0.4s ease 0s;
+    -moz-transition: all 0.4s ease 0s;
+    -ms-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+    transform: translateX(250px);
+    background: rgba(113, 184, 255, 0.9);
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  #sidebar-wrapper .sidebar-nav li.sidebar-nav-item a {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    padding: 15px;
+  }
+  #sidebar-wrapper .sidebar-nav li a:hover {
+    text-decoration: none;
+    color: #fff;
+    background: rgba(113, 184, 255, 0.5);
+
+  }
+  #sidebar-wrapper .sidebar-nav li a:active, .sidebar-nav li a:focus {
+    text-decoration: none;
+    text-decoration: none;
+    color: #fff;
+    background: rgba(113, 184, 255, 0.5);
+  }
+  #sidebar-wrapper .sidebar-nav>.sidebar-brand {
+    font-size: 20px;
+    height: 80px;
+    line-height: 50px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+  }
+  #sidebar-wrapper .sidebar-nav>.sidebar-brand a {
+    color: #fff;
+  }
+  #sidebar-wrapper .sidebar-nav>.sidebar-brand a:hover {
+    color: #fff;
+    background: none;
+  }
+  #sidebar-wrapper.active {
+    right: 250px;
+    width: 250px;
+    -webkit-transition: all 0.4s ease 0s;
+    -moz-transition: all 0.4s ease 0s;
+    -ms-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+    z-index: 99;
+  }
+  .menu-toggle {
+    position: fixed;
+    right: 0px;
+    top: 0px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    color: #fff;
+    background: rgba(113, 184, 255, 0.5);
+    line-height: 40px;
+    z-index: 999;
+  }
+  .menu-toggle:focus, .menu-toggle:hover {
+    color: #fff;
+  }
+  .menu-toggle:hover {
+    background: rgba(66, 127, 189, 0.5);
+
+  }
+  
+
+  .aling-img{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }

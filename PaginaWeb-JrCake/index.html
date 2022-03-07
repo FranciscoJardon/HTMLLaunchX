@@ -1,289 +1,74 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
 <head>
-	<meta charset="UTF-8">
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
-	<link rel="stylesheet" href="assets/css/normalize.css">
-	<link rel="stylesheet" href="assets/css/index.css">
-
-	<!-- Link Swiper's CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-	<script src="https://kit.fontawesome.com/3aef3e59a8.js" crossorigin="anonymous"></script>
-
-	<!--scripts-->
- 	<script type="text/javascript" src="assets/js/jquery-3.2.1.min.js"></script>
-  	<script type="text/javascript" src="assets/js/all-plugins.js"></script>
-  	<script type="text/javascript" src="assets/js/plugins-activate.js"></script>
-	  
-    <link rel="icon" type="image/ico" sizes="32x32" href="assets/img/favicon.ico">
-	<title>JrCake</title>
+    <title>JrCake</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-1.8.1.min.js" type="text/javascript"></script>
+	<script src="js/transit.js"></script>
+	<script src="js/easing.js"></script>
 </head>
-<body>
-	<div style="display: none1;" class="contenedor-carga" id="carga">
-		<img class="logo-inicio" style="width: 100%; position:sticky;" src="assets/img/carga.svg">
-	</div>
 
-	<div style="display:none" id="cliente">
-	<img style="width: 100%;  z-index: 1;" src="assets/img/nav-movil.png">
-	     <a class="menu-toggle rounded" href="#">
-			<i class="fas fa-bars"></i>
-		 </a>
-		<nav id="sidebar-wrapper">
-		<ul class="sidebar-nav">
-		  <br>
-		  <li class="sidebar-nav-item">
-			<a class="smooth-scroll" href="#inicio">Inicio</a>
-		  </li>
-		  <li class="sidebar-nav-item">
-			<a class="smooth-scroll" href="#crea">Crear Pastel</a>
-		  </li>
-		  <li class="sidebar-nav-item">
-			<a class="smooth-scroll" href="#contacto">Contacto</a>
-		  </li><BR>
-		  <li class="sidebar-nav-item">
-			<a class="smooth-scroll" id="sesion">Inicia Sesión</a>
-		  </li>
-		 
-		</ul>
-	  </nav>
-	<section class="contenedor-home" id="inicio">
-		<div class="contenedor-logo">
-			<h1>JrCake</h1>
-			<p>Fresco y delicioso porque te mereces lo mejor, haz tu día más feliz.</p>
-		</div >
-		<img class="img-inicio" src="assets/img/persona.svg">
-	</section>
-	<section class="contenedor-crear" id="crea">
-		<h2>Crea tu pastel</h2><br>
-			<h3 style="text-align: center;">Elige un pastel</h3><br>
-			<!-- Swiper -->
-   				<div class="swiper mySwiper">
-   				  <div class="swiper-wrapper">
-   				    <div class="swiper-slide">
-						<input type="radio" id="azul" name="pastel" value="azul">
-						<label for="azul"><img src="assets/img/pastel1.svg"></label>
-					</div>
-   				    <div class="swiper-slide">
-						<input type="radio" id="rosa" name="pastel" value="rosa">
-						<label for="rosa"><img src="assets/img/pastel2.svg"></label>
-					</div>
-   				    <div class="swiper-slide">
-						<input type="radio" id="amarillo" name="pastel" value="amarillo">
-						<label for="amarillo"><img src="assets/img/pastel3.svg"></label>
-					</div>
-   				    <div class="swiper-slide">
-						<input type="radio" id="verde" name="pastel" value="verde">
-						<label for="verde"><img src="assets/img/pastel4.svg"></label>
-					</div>
-   				    
-   				  </div><br><br>
-   				  <div class="swiper-pagination"></div>
-   				</div><br>
-			<h3 style="text-align: center;">Elige un adorno</h3><br>
-				 <!-- Swiper -->
-				 <div class="swiper mySwiper">
-					<div class="swiper-wrapper">
-					  <div class="swiper-slide">
-						<input type="radio" id="choc1" name="adorno" value="choc1">
-						<label for="choc1"><img src="assets/img/adorno1.png"></label>
-				   	  </div>
-					  <div class="swiper-slide">
-						<input type="radio" id="choc2" name="adorno" value="choc2">
-						<label for="choc2"><img src="assets/img/adorno2.png"></label>
-				      </div>
-					  <div class="swiper-slide">
-						<input type="radio" id="choc3" name="adorno" value="choc3">
-						<label for="choc3"><img src="assets/img/adorno3.png"></label>
-				      </div>
-					  <div class="swiper-slide">
-						<input type="radio" id="choc4" name="adorno" value="choc4">
-						<label for="choc4"><img src="assets/img/adorno4.png"></label>
-				      </div>
-					  
-					</div><br><br>
-					<div class="swiper-pagination"></div>
-				  </div><br>
+<style>
 
+@font-face {
+    font-family: 'nunito';
+    src: url('fonts/nunito.eot');
+	src: url('fonts/nunito.eot?#iefix') format('embedded-opentype'),
+    url('fonts/nunito.woff') format('woff'),
+    url('fonts/nunito.svg#nunito') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+html{
+ overflow-x: hidden;
+}
+body{
+	margin:0px;
+	font-family: 'rowdies';
+	overflow-x: hidden;
+}
+
+			.centrar_v {
+                position: absolute;
+                top: 50%;
+                transform: translate(0%, -50%);
+                -ms-transform: translate(0%, -50%);
+                -webkit-transform: translate(0%, -50%);
+            }
+    
+            .centrar_h {
+                position: absolute;
+                left: 50%;
+                transform: translate(-50%, 0%);
+                -ms-transform: translate(-50%, 0%);
+                -webkit-transform: translate(-50%, 0%);
+            }
+    
+            .centrar {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+                -webkit-transform: translate(-50%, -50%);
+			}
 			
-				<div class="contenedor-form">
-					<form action="" method="post" class="form">
-					<input class="input"  type="text" name="name" id="name" placeholder="Nombre" required="">
-					<input class="input"  type="email" name="email" id="mail" placeholder="Correo" required="">
-					<input class="input"  type="number" name="tel" id="tel" placeholder="Teléfono" required="">
-					<textarea  class="input" name="mensaje" id="message" cols="30" rows="10" 	placeholder="Descripción del Pastel" required=""></textarea>
-					<input class="input"  type="submit" value="Realizar Pedido">
-					</form>
-				</div>
+			.redondear {
+				-moz-border-radius: 3.5vh;
+				-webkit-border-radius: 3.5vh;
+				border-radius: 3.5vh;
+            }
+            
+            .sombra{
+                -webkit-box-shadow: 3px 3px 10px -3px rgba(0,0,0,0.53); 
+                box-shadow: 3px 3px 10px -3px rgba(0,0,0,0.53);
+            }
+</style>
 
-	
-	</section>
-	<section class="contenedor-contacto" id="contacto">
-		<h2>Contacto</h2>
-		<p>
-			Tel: 55 13245687
-			<br><br>
-			Horarios: 09:00 am - 20:00 pm 
-		</p>
-		<p style="width: 90%;margin-left:5% ;" >
-			AVENIDA AZTECAS NO. 270, COL. LOS REYES, C.P. 4330, LOC. COYOACAN, COYOACAN, CIUDAD DE MEXICO
-		</p>
-		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d240863.68495291946!2d-99.2836992016655!3d19.391003840061956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce0026db097507%3A0x54061076265ee841!2sCiudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1646528471718!5m2!1ses-419!2smx" width="90%" height="250" style="border:0;margin-left:5%;" allowfullscreen="" loading="lazy"></iframe>
-	</section><br>
-	<footer class=""><br>
-		<h2>JrCake</h2>
-		<h3>Pastelería</h3><br>
-		<a style="text-decoration: none;  color:#004266;" href="#inicio">Inicio</a><br><br>
-		<a style="text-decoration: none;  color:#004266;" href="#crea">Crear Pastel</a><br><br>
-		<a style="text-decoration: none;  color:#004266;" href="#contacto">Contacto</a>
-		<div style="text-align: right;">
-			<a  target="_blank" href="https://www.facebook.com/"><img src="assets/img/fb.svg"></a>
-			<a  target="_blank" href="https://www.instagram.com/"><img src="assets/img/inst.svg"></a>
-			<a  target="_blank" href="https://web.whatsapp.com/"><img src="assets/img/wts.svg"></a>
-		</div>
-		<br>
+<link rel="shortcut icon" href="misspaty_ico.ico"/>
 
-		<p>All right reserverd. 2022</p><br>
-
-	</footer>
-
-	</div>
-
-	<div style="display:none" id="dueño">
-		<img style="width: 100%;" src="assets/img/nav-movil.png">	
-		<section id="inventario">
-			<h2>Inventario</h2>
-				<h3>Pasteles</h3>
-				<div class="swiper mySwiper">
-					<div class="swiper-wrapper">
-					  <div class="swiper-slide">
-						<img src="assets/img/pastel1.svg">
-						12
-						<br>
-				   	  </div>
-					  <div class="swiper-slide">
-						<img src="assets/img/pastel2.svg">15
-
-				   </div>
-					  <div class="swiper-slide">
-						<img src="assets/img/pastel3.svg">14
-				   </div>
-					  <div class="swiper-slide">
-						<img src="assets/img/pastel4.svg">07
-				   </div>
-					  
-					</div><br><br>
-					<div class="swiper-pagination"></div>
-				  </div><br>
-					
-					
-				
-					
-				<h3>Adornos</h3>
-				<div class="swiper mySwiper">
-					<div class="swiper-wrapper">
-					  <div class="swiper-slide">
-						<img src="assets/img/adorno1.png">
-						112
-						<br>
-				   	  </div>
-					  <div class="swiper-slide">
-						<img src="assets/img/adorno2.png">115
-
-				   </div>
-					  <div class="swiper-slide">
-						<img src="assets/img/adorno3.png">124
-				   </div>
-					  <div class="swiper-slide">
-						<img src="assets/img/adorno4.png">337
-				   </div>
-					  
-					</div><br><br>
-					<div class="swiper-pagination"></div>
-				  </div><br>
-					<br>
-			<h2 id="pedidos">Pedidos</h2> <br>
-				<div id="pedido1"> 
-					<h3>Roberto Martinez</h3>
-					<p>
-						roberto_martinez@gmail.com 
-						<br><br>
-						55 32455689
-					</p>	
-					<p>Descripción: Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam</p>
-					<div class="aling-img"><img src="assets/img/pastel4.svg">	
-					<img src="assets/img/adorno3.png"></div>
-				</div>
-				<div id="pedido2">
-					<h3>Diego Ruzarin</h3>
-					<p>
-						diego-ruz@gmail.com 
-						<br><br>
-						55 324536589
-					</p>	
-					<p>Descripción: Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam</p>
-					<div class="aling-img"><img src="assets/img/pastel2.svg">	
-						<img src="assets/img/adorno1.png"></div>
-				</div>
-		</section>	<br><bR>
-		<footer>
-			<br>
-			<h2>JrCake</h2>
-			<h3>Pastelería</h3>
-			<br>
-			<a style="text-decoration: none; color: #004266;" href="#inventario">Inventario</a><br><br>
-			<a style="text-decoration: none; color: #004266;" href="#pedidos">Pedidos</a><br><br>
-			<a style="text-decoration: none; color: #004266;" id="salir">Salir</a>
-	
-			<p>All right reserverd. 2022</p>
-	<br>
-		</footer>
-
-	</div>
-
-
-	<!-- Swiper JS -->
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
-    <!-- Initialize Swiper -->
-    <script>
-      var swiper = new Swiper(".mySwiper", {
-        slidesPerView: 3,
-        spaceBetween: 30,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-        breakpoints: {
-          640: {
-            slidesPerView: 3,
-            spaceBetween: 30,
-          },
-          768: {
-            slidesPerView: 4,
-            spaceBetween: 40,
-          },
-          1024: {
-            slidesPerView: 4,
-            spaceBetween: 40,
-          },
-        },
-      });
-    </script>
-
-	<script>
-
-		setTimeout(function(){
-		$("#carga").fadeOut()
-		$("#cliente").fadeIn()
-		},4000);
-
-		$('#sesion').click(function(){
-		$("#cliente").fadeOut()
-		$("#dueño").fadeIn()}) 
-
-		$('#salir').click(function(){
-		$("#dueño").fadeOut()
-		$("#cliente").fadeIn()}) 
-	</script>
+<body style="background: rgb(247, 247, 247); overflow-x: hidden;">
+		<iframe src="home.html" class="centrar sombra" style="overflow-x: hidden;width:50vh; height:98vh; border: none;" ></iframe>
 </body>
 </html>
+

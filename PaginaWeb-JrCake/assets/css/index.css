@@ -2,13 +2,17 @@
     box-sizing: border-box;
 }
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
-
+html{
+   
+}
 body{
+
     position: relative;
     background:#F0FAFF;
     color:#004266;
     font-family: 'Abril Fatface', cursive;
 }
+
 
 .contenedor-carga{
     display: flex;
@@ -112,11 +116,7 @@ input[type="number"]{
 }
 
 .form textarea{
-    max-width: 300px;
-    min-width: 250px;
-   width: 295px;
-   min-height: 200px;
-   max-height: 200px;
+   width: 80%;
     margin-bottom: 15px;
 }
 
